@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <h1>Main</h1>
+    <h1>Header</h1>
     <Links></links>
-    <router-view></router-view>
-    <Main></Main>
+    <router-view :some-value-to-pass="this.$store.state.user"></router-view>
+    
   </div>
 </template>
 
