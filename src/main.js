@@ -2,9 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
-import Main from './components/Main.vue'
-import Holidays from './components/Holidays.vue'
-import Extra from './components/Extra.vue'
+import Main from './views/Main.vue'
+import Holidays from './views/Holidays.vue'
 
 Vue.config.productionTip = false
 
@@ -33,17 +32,13 @@ const router = new VueRouter({
   },
   {
     path: '/holidays',
-    component: Holidays,
-    props: true
+    component: Holidays
+    
   },
   {
     path: '/holidays/:slug',
     component: Holidays,
     props: true
-  },
-  {
-    path: '/extra',
-    component: Extra 
   }
   ]
 })

@@ -5,28 +5,19 @@
       <option value=""></option>
       <option v-for="country in this.$store.state.countries" :key="country.country" :value='country'>{{country.country}}</option>
     </select>
-     <div id="country-holiday" v-if="currentCountry">
-        <ul>
-         <li v-for="holiday of holidays" :key="holiday.name">
-            <p>Holiday: {{holiday.name}}</p>
-            <p>Description: {{holiday.description}}</p>
-            <p>Country:{{holiday.country.name}}, {{holiday.country.id}}</p>
-            <p>Date: {{holiday.date.iso}}</p>
-            <p>Datetime: {{holiday.date.datetime.year}}-{{holiday.date.datetime.month}}-{{holiday.date.datetime.day}}</p>
-            <p>Type: {{holiday.type[0]}}</p>
-            <p>Locations: {{holiday.locations}}</p>
-            <p>States: {{holiday.states}}</p>
-            <hr>
-            </li>
-        </ul>
-     </div>
+    <app-country :countryHolidays = "holidays"></app-country>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import country from '../components/Country.vue'
 
 export default {
+  components:{
+    appCountry: country
+  },
+  
   data(){
     return{
       currentCountry: null,
@@ -41,7 +32,6 @@ export default {
   },
   methods:{
     setTitle(){
-      
       document.title = `Holidays`
       console.log(this.someValueToPass)
     },

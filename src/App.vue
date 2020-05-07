@@ -3,7 +3,6 @@
     <h1>Header</h1>
     <Links></links>
     <router-view :some-value-to-pass="this.$store.state.user"></router-view>
-    
   </div>
 </template>
 
