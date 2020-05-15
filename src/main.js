@@ -18,7 +18,7 @@ new Vue({
       const data = await fetch('https://restcountries.eu/rest/v2/all')
       const countries = await data.json()
       for(const country of countries){
-        this.$store.state.countries.push({country:country.name, shortName: country.alpha2Code})
+        this.$store.commit('addCountry',{country:country.name, shortName: country.alpha2Code})
       }
     }
   }

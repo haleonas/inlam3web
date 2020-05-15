@@ -6,6 +6,9 @@ Vue.use(Vuex)
 const mutations = {
   setUsername(state, value){
     state.user = value
+  },
+  addCountry(state,country){
+    state.countries.push(country)
   }
 }
   
