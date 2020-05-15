@@ -11,13 +11,23 @@ const mutations = {
     state.countries.push(country)
   }
 }
+
+const getters = {
+  getCountries: state => {
+    return state.countries
+  },
+  getUser: state => {
+    return state.user
+  }
+}
   
 let store = new Vuex.Store({
     state: {
         countries: [],
         user: ''
     },
-    mutations
+    mutations,
+    getters
 })
 
 export default store

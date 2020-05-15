@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Header</h1>
     <Links></links>
-    <router-view :some-value-to-pass="this.$store.state.user"></router-view>
+    <router-view :some-value-to-pass="this.$store.getters.getUser"></router-view>
   </div>
 </template>
 

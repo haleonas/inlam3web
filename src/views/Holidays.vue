@@ -3,7 +3,7 @@
     <label for="countries"> Choose a country: </label>
     <select id="countries" v-model="currentCountry" @change="changeRoute">
       <option value=""></option>
-      <option v-for="country in this.$store.state.countries" :key="country.country" :value='country'>{{country.country}}</option>
+      <option v-for="country in this.$store.getters.getCountries" :key="country.country" :value='country'>{{country.country}}</option>
     </select>
     <app-country :countryHolidays = "holidays"></app-country>
   </div>
@@ -34,9 +34,6 @@ export default {
     setTitle(){
       document.title = `Holidays`
       console.log(this.someValueToPass)
-    },
-    getCountries(){
-      console.log(this.$store.state.countries)
     },
     async getHolidays(countryCode){
       let date = new Date().getFullYear()

@@ -1,6 +1,6 @@
 <template>
     <div id="main">
-       <p><label :value="this.$store.state.user" for="userInput">Username:{{this.$store.state.user}}</label></p>
+       <p><label :value="userValue" for="userInput">Username:{{this.$store.getters.getUser}}</label></p>
        <input v-model="userValue" id="userInput">
     </div>
 </template>
@@ -12,7 +12,7 @@ export default {
     computed:{
         userValue:{ 
             get(){
-                return this.$store.state.user
+               return this.$store.getters.getUser
             },
             set(value){
                 this.$store.commit('setUsername',value)
