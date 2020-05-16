@@ -1,6 +1,6 @@
 <template>
     <div id="main">
-       <p><label :value="userValue" for="userInput">Username:{{this.$store.getters.getUser}}</label></p>
+       <p><label :value="userValue" for="userInput">Username:{{userValue}}</label></p>
        <input v-model="userValue" id="userInput">
     </div>
 </template>

@@ -3,7 +3,7 @@
     <label for="countries"> Choose a country: </label>
     <select id="countries" v-model="currentCountry" @change="changeRoute">
       <option value=""></option>
-      <option v-for="country in this.$store.getters.getCountries" :key="country.country" :value='country'>{{country.country}}</option>
+      <option v-for="country in countries" :key="country.country" :value='country'>{{country.country}}</option>
     </select>
     <app-country :countryHolidays = "holidays"></app-country>
   </div>
@@ -17,7 +17,15 @@ export default {
   components:{
     appCountry: country
   },
-  
+  computed: {
+    countries:
+    {
+      get()
+      {
+        return this.$store.getters.getCountries
+      }
+    }
+  },
   data(){
     return{
       currentCountry: null,
